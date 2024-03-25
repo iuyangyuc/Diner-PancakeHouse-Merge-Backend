@@ -48,5 +48,9 @@ public class DinerMenu {
         return  stringBuilder.toString();
     }
 
-      // other menu methods here
+    public Iterator createIterator() {
+        return new DinerMenuIterator(menuItems);
+    }
+
+    // other menu methods here
 }
