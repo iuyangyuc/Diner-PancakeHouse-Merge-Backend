@@ -14,14 +14,14 @@ import java.util.List;
 @CrossOrigin
 @RequestMapping("/pancakehouse")
 public class PancakeHouseController {
-    PancakeHouseRepository pancakeHouseRepository;
+    PancakeHouseRepository repository;
 
     public PancakeHouseController(PancakeHouseRepository repository) {
-        this.pancakeHouseRepository = repository;
+        this.repository = repository;
     }
 
     @GetMapping
     public List<MenuItem> get() {
-        return pancakeHouseRepository.getTheMenu();
+        return repository.getTheMenu();
     }
 }
