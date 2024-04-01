@@ -34,7 +34,7 @@ public class Menu extends MenuComponent{
 
     public MenuItem[] getItems() {
         MenuItem[] items = new MenuItem[menuComponents.size()];
-        for (int i = 0; i < menuComponents.size(); i++) {
+        for (int i=0; i < menuComponents.size(); i++) {
             items[i] = menuComponents.get(i).getItems()[i];
         }
         return items;
