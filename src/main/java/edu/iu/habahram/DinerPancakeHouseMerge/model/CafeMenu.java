@@ -24,4 +24,16 @@ public class CafeMenu extends Menu{
         MenuItem menuItem = new MenuItem(name, description, vegetarian, price);
         menuItems.put(name, menuItem);
     }
+
+    public MenuItem[] getMenuItems() {
+        return menuItems.values().toArray(new MenuItem[0]);
+    }
+
+    public String toString() {
+        StringBuilder stringBuilder = new StringBuilder();
+        for(MenuItem item: getMenuItems()) {
+            stringBuilder.append(item.toString());
+        }
+        return  stringBuilder.toString();
+    }
 }
