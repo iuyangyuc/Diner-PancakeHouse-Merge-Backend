@@ -58,6 +58,7 @@ public class MergerController {
         List<MenuItemRecord> supperItems = mergerRepository.getTheMenuItems().stream()
                 .filter(item -> item.name().toLowerCase().contains("dinner"))
                 .collect(Collectors.toList());
+
         return supperItems;
     }
 }
