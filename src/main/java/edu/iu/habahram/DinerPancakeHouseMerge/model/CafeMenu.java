@@ -5,35 +5,29 @@ import java.util.Iterator;
 import java.util.Map;
 
 public class CafeMenu extends Menu{
-    HashMap<String, MenuItem> menuItems = new HashMap<String, MenuItem>();
 
     public CafeMenu(String name, String description) {
         super(name, description);
-        addItem("Veggie Burger and Air Fries",
+        addItem("Veggie Burger and Air Fries lunch",
                 "Veggie burger on a whole wheat bun, lettuce, tomato, and fries",
                 true, 3.99);
-        addItem("Soup of the day",
+        addItem("Soup of the day lunch",
                 "A cup of the soup of the day, with a side salad",
                 false, 3.69);
-        addItem("Burrito",
+        addItem("Burrito lunch",
                 "A large burrito, with whole pinto beans, salsa, guacamole",
                 true, 4.29);
     }
 
-    public void addItem(String name, String description, boolean vegetarian, double price) {
+    public void addItem(String name, String description,
+                        boolean vegetarian, double price)
+    {
         MenuItem menuItem = new MenuItem(name, description, vegetarian, price);
-        menuItems.put(name, menuItem);
+        add(menuItem);
     }
 
-    public MenuItem[] getMenuItems() {
-        return menuItems.values().toArray(new MenuItem[0]);
-    }
 
-    public String toString() {
-        StringBuilder stringBuilder = new StringBuilder();
-        for(MenuItem item: getMenuItems()) {
-            stringBuilder.append(item.toString());
-        }
-        return  stringBuilder.toString();
-    }
+
+
+
 }
